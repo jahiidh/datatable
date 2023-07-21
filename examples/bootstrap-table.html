@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataTable Bootstrap</title>
+    <link
+      rel="stylesheet"
+      href="../documentation/assets/vendor/bootstrap/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="../dist/datatable.min.css" />
+  </head>
+  <body>
+    <table id="example" class="table" style="display: none">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>25</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr>
+          <td>Jane Smith</td>
+          <td>30</td>
+          <td>jane@example.com</td>
+        </tr>
+        <tr>
+          <td>Bob Johnson</td>
+          <td>35</td>
+          <td>bob@example.com</td>
+        </tr>
+        <tr>
+          <td>Alice Williams</td>
+          <td>28</td>
+          <td>alice@example.com</td>
+        </tr>
+        <tr>
+          <td>Michael Brown</td>
+          <td>32</td>
+          <td>michael@example.com</td>
+        </tr>
+        <tr>
+          <td>Sarah Davis</td>
+          <td>29</td>
+          <td>sarah@example.com</td>
+        </tr>
+        <tr>
+          <td>Robert Taylor</td>
+          <td>37</td>
+          <td>robert@example.com</td>
+        </tr>
+        <tr>
+          <td>Olivia Martinez</td>
+          <td>31</td>
+          <td>olivia@example.com</td>
+        </tr>
+        <tr>
+          <td>William Anderson</td>
+          <td>26</td>
+          <td>william@example.com</td>
+        </tr>
+        <tr>
+          <td>Sophia Wilson</td>
+          <td>33</td>
+          <td>sophia@example.com</td>
+        </tr>
+        <tr>
+          <td>James Garcia</td>
+          <td>27</td>
+          <td>james@example.com</td>
+        </tr>
+        <tr>
+          <td>Emma Thomas</td>
+          <td>34</td>
+          <td>emma@example.com</td>
+        </tr>
+        <tr>
+          <td>David Rodriguez</td>
+          <td>30</td>
+          <td>david@example.com</td>
+        </tr>
+        <tr>
+          <td>Isabella Clark</td>
+          <td>25</td>
+          <td>isabella@example.com</td>
+        </tr>
+        <tr>
+          <td>Joseph Young</td>
+          <td>32</td>
+          <td>joseph@example.com</td>
+        </tr>
+        <tr>
+          <td>Charlotte Lewis</td>
+          <td>29</td>
+          <td>charlotte@example.com</td>
+        </tr>
+        <tr>
+          <td>Daniel Lee</td>
+          <td>36</td>
+          <td>daniel@example.com</td>
+        </tr>
+        <tr>
+          <td>Mia Martinez</td>
+          <td>31</td>
+          <td>mia@example.com</td>
+        </tr>
+        <tr>
+          <td>Andrew Scott</td>
+          <td>26</td>
+          <td>andrew@example.com</td>
+        </tr>
+        <tr>
+          <td>Emily Hernandez</td>
+          <td>33</td>
+          <td>emily@example.com</td>
+        </tr>
+        <tr>
+          <td>Joshua Walker</td>
+          <td>28</td>
+          <td>joshua@example.com</td>
+        </tr>
+        <tr>
+          <td>Abigail Moore</td>
+          <td>35</td>
+          <td>abigail@example.com</td>
+        </tr>
+        <tr>
+          <td>Christopher Hall</td>
+          <td>30</td>
+          <td>christopher@example.com</td>
+        </tr>
+        <tr>
+          <td>Sophia Rogers</td>
+          <td>27</td>
+          <td>sophia@example.com</td>
+        </tr>
+        <tr>
+          <td>Samuel Young</td>
+          <td>34</td>
+          <td>samuel@example.com</td>
+        </tr>
+        <tr>
+          <td>Elizabeth White</td>
+          <td>29</td>
+          <td>elizabeth@example.com</td>
+        </tr>
+        <tr>
+          <td>Elijah Rodriguez</td>
+          <td>36</td>
+          <td>elijah@example.com</td>
+        </tr>
+        <tr>
+          <td>Grace Walker</td>
+          <td>31</td>
+          <td>grace@example.com</td>
+        </tr>
+        <tr>
+          <td>Dylan Allen</td>
+          <td>26</td>
+          <td>dylan@example.com</td>
+        </tr>
+        <tr>
+          <td>Chloe Turner</td>
+          <td>33</td>
+          <td>chloe@example.com</td>
+        </tr>
+        <tr>
+          <td>Carter Hill</td>
+          <td>28</td>
+          <td>carter@example.com</td>
+        </tr>
+        <tr>
+          <td>Victoria Scott</td>
+          <td>35</td>
+          <td>victoria@example.com</td>
+        </tr>
+        <tr>
+          <td>Henry Lewis</td>
+          <td>30</td>
+          <td>henry@example.com</td>
+        </tr>
+        <tr>
+          <td>Madison Diaz</td>
+          <td>27</td>
+          <td>madison@example.com</td>
+        </tr>
+        <tr>
+          <td>Alexander Garcia</td>
+          <td>34</td>
+          <td>alexander@example.com</td>
+        </tr>
+        <tr>
+          <td>Lily Jenkins</td>
+          <td>29</td>
+          <td>lily@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="../dist/datatable.min.js"></script>
+    <script>
+      new DataTable("#example", {
+        data: [
+          ["John Doe", 25, "john@example.com"],
+          ["Jane Smith", 30, "jane@example.com"],
+          ["Bob Johnson", 35, "bob@example.com"],
+          ["Alice Williams", 28, "alice@example.com"],
+          ["Michael Brown", 32, "michael@example.com"],
+          ["Sarah Davis", 29, "sarah@example.com"],
+          ["Robert Taylor", 37, "robert@example.com"],
+          ["Olivia Martinez", 31, "olivia@example.com"],
+          ["William Anderson", 26, "william@example.com"],
+          ["Sophia Wilson", 33, "sophia@example.com"],
+        ],
+        content: "table",
+        search: true,
+        sort: true,
+        sort_columns: [],
+        pagination: true,
+        limit: [10, 20, 50, 100],
+        current_limit: 10,
+      });
+    </script>
+  </body>
+</html>

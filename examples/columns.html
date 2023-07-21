@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataTable Array data</title>
+    <link rel="stylesheet" href="../dist/datatable.min.css" />
+  </head>
+  <body>
+    <div id="example"></div>
+
+    <script src="../dist/datatable.min.js"></script>
+    <script>
+      new DataTable("#example", {
+        data: [
+          ["John Doe", 25, "john@example.com"],
+          ["Jane Smith", 30, "jane@example.com"],
+          ["Bob Johnson", 35, "bob@example.com"],
+          ["Alice Williams", 28, "alice@example.com"],
+          ["Michael Brown", 32, "michael@example.com"],
+          ["Sarah Davis", 29, "sarah@example.com"],
+          ["Robert Taylor", 37, "robert@example.com"],
+          ["Olivia Martinez", 31, "olivia@example.com"],
+          ["William Anderson", 26, "william@example.com"],
+          ["Sophia Wilson", 33, "sophia@example.com"],
+        ],
+        content: "data",
+        search: true,
+        search_heighlight: true,
+        sort: true,
+        pagination: true,
+        limit: [10, 20, 50, 100],
+        current_limit: 10,
+        themeClass: "default",
+        columns: ["Name", "Age", "Email"],
+      });
+    </script>
+  </body>
+</html>

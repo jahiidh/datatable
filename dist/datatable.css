@@ -1,0 +1,139 @@
+@charset "UTF-8"; /*!
+ * DataTable v1.0.3 (https://getbootstrap.com/)
+ * Copyright 2023, Author (https://github.com/jahiidh)
+ * Licensed under MIT (https://github.com/jahiidh/datatable/LICENSE)
+*/
+table.dt-table.basic,
+table.dt-table.default {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+table.dt-table.basic tbody td {
+  background: #dedede;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+}
+.dt-footer,
+.dt-header,
+.dt-table {
+  font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
+}
+table.dt-table.default {
+  border-spacing: 0;
+  border-spacing: border-box;
+  color: #2c3338;
+}
+table.dt-table.default tbody,
+table.dt-table.default thead tr {
+  border: 1px solid #c3c4c7;
+}
+table.dt-table.default thead th {
+  padding: 8px;
+}
+table.dt-table.default tbody td {
+  padding: 8px 10px;
+}
+table.dt-table.default tbody tr:nth-child(odd) {
+  background-color: #f6f7f7;
+}
+table.dt-table.default a {
+  color: #2271b1;
+  text-decoration: none;
+}
+.dt-table.dt-sticky thead tr th {
+  box-shadow: inset 0 -1px 0 0 #c3c4c7;
+  background: #fff;
+  position: sticky;
+  top: 0;
+}
+.dt-header {
+  margin-bottom: 0.5rem;
+}
+.dt-pagination,
+.dt-search {
+  text-align: right;
+}
+:is(.dt-header, .dt-footer) .d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+:is(.dt-header, .dt-table) :is(input, select) {
+  box-sizing: border-box;
+  border: 1px solid #c3c4c7;
+  padding: 0 8px;
+  font-size: 13px;
+  line-height: 2;
+  min-height: 30px;
+}
+.dt-filter select {
+  margin-right: 0.3rem;
+}
+.dt-footer {
+  margin-top: 0.5rem;
+}
+.dt-pagination :is(button:enabled) {
+  cursor: pointer;
+}
+.dt-pagination :is(button) {
+  padding: 8px;
+  border: none;
+  background: #dedede;
+  margin: 0 0.1rem;
+}
+.dt-pagination :is(span[disabled]) {
+  display: inline-block;
+  padding: 4px;
+}
+.dt-pagination button:is(:hover:enabled) {
+  background: #c3c4c7;
+  filter: invert(1);
+}
+.dt-pagination button:is(.active) {
+  pointer-events: none;
+  color: #9a9a99;
+}
+.dt-table thead .dt-sortable {
+  cursor: pointer;
+  position: relative;
+  color: #5a91be;
+}
+.dt-table thead .dt-sortable svg {
+  vertical-align: middle;
+  top: 50%;
+  position: absolute;
+  left: 105%;
+  transform: translate(10%, -40%);
+  opacity: 0;
+  pointer-events: none;
+}
+.dt-table thead .dt-sortable:hover svg {
+  opacity: 1;
+  pointer-events: all;
+}
+.dt-table thead .dt-sortable.sorted svg {
+  transform: rotate(180deg) translate(-10%, 40%);
+}
+.dt-body :is(.dt-catnone, .dt-searchnone, .d-none) {
+  display: none;
+}
+.dt-body .dt-catbutton {
+  border-radius: 50px;
+  border: unset;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  margin: 5px 5px 0 0;
+  cursor: pointer;
+}
+.dt-body .dt-catbutton.active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.dt-table tr[hidetype] {
+  display: none;
+}
+.dt-body .dt-search-highlight {
+  background-color: rgba(255, 255, 0, 0.3);
+}

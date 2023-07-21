@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
+    />
+    <link href="assets/images/favicon.png" rel="icon" />
+    <title>
+      Vanilla JS DataTable Documentation | Easy and Powerful Data Tables
+    </title>
+
+    <meta
+      name="description"
+      content="Explore the powerful and easy-to-use Vanilla JS DataTable library. Effortlessly create, customize, and manage data tables on your front-end web projects. Get started with our comprehensive documentation and examples."
+    />
+
+    <meta name="author" content="Jahid H." />
+    <meta name="author-url" content="https://jahidh.com" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/font-awesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/magnific-popup/magnific-popup.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/prism/prism.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/color-brown.css" />
+    <link rel="stylesheet" href="assets/datatable/datatable.css" />
+  </head>
+
+  <body data-spy="scroll" data-target=".datatable-navigation" data-offset="125">
+    <div class="preloader">
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div id="main-wrapper">
+      <header id="header" class="sticky-top">
+        <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+          <div class="container-fluid">
+            <button
+              id="sidebarCollapse"
+              class="navbar-toggler d-block d-md-none"
+              type="button"
+            >
+              <span></span><span class="w-75"></span><span class="w-50"></span>
+            </button>
+
+            <a
+              class="logo ml-md-3 text-decoration-none"
+              href=""
+              title="datatable Template"
+            >
+              <span class="h2"> DataTable </span>
+            </a>
+            <span class="text-2 ml-2">v1.0.3</span>
+
+            <button
+              class="navbar-toggler ml-auto"
+              type="button"
+              data-toggle="collapse"
+              data-target="#header-nav"
+            >
+              <span></span><span></span><span></span>
+            </button>
+
+            <div
+              id="header-nav"
+              class="collapse navbar-collapse justify-content-end"
+            >
+              <ul class="navbar-nav">
+                <li class="dropdown">
+                  <a class="dropdown-toggle" href="#">Use it</a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="https://github.com/jahiidh/datatable"
+                        >Download</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="https://jahidh.com/blog/datatable"
+                        >Read blogs</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="https://jahidh.com/about"
+                        >About developer</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a target="_blank" href="https://jahidh.com/tools">
+                    More tools
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
+              <li>
+                <a
+                  data-toggle="tooltip"
+                  href="http://www.github.com/jahiidh/"
+                  target="_blank"
+                  title=""
+                  data-original-title="Github"
+                >
+                  <span
+                    ><svg
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      class="github-altsd"
+                    >
+                      <path
+                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                      ></path></svg></span
+                ></a>
+              </li>
+              <li>
+                <a
+                  data-toggle="tooltip"
+                  href="https://www.linkedin.com/in/jahiidh/"
+                  target="_blank"
+                  title=""
+                  data-original-title="Linkedin"
+                  ><span
+                    ><svg
+                      role="img"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      class="linkedin-altsd"
+                    >
+                      <title>LinkedIn</title>
+                      <path
+                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                      ></path></svg></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div id="content" role="main">
+        <div class="datatable-navigation bg-dark docs-navigation-dark">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#datatable_start"
+                >Getting Started</a
+              >
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_installation"
+                    >Installation</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_basic_usage"
+                    >Basic usage</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#datatable_examples">Examples</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_table">Table Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_array">Array Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_column">Columns</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_cellhtml"
+                    >HTML in cell</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_search">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_search_highlight"
+                    >Search highlight</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_limit">Limit per page</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_pagination"
+                    >Pagination</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_sticky">Sticky header</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_hideextra"
+                    >Handle Extra data</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_sort">Sort Table</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_category">Category</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#datatable_all"
+                    >Everything in one place</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#datatable_changelog">Changelog</a>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#v1-0-3">v1.0.3</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#v1-0">v1.0</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="datatable-content">
+          <div class="container">
+            <section id="datatable_start">
+              <h1>Introduction</h1>
+              <h2>Vanilla JavaScript DataTable</h2>
+              <p class="lead">
+                Advanced and very lightweight DataTable for use with your
+                Vanilla JavaScript project. It's used vanilla JavaScript, so
+                that you could use it anywhere you want.
+              </p>
+              <hr />
+              <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                  <ul class="list-unstyled">
+                    <li><strong>Version:</strong> 1.0.3</li>
+                    <li>
+                      <strong>Author:</strong>
+                      <a href="https://jahidh.com" target="_blank">Jahid H.</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                  <ul class="list-unstyled">
+                    <li>
+                      <strong class="font-weight-700">Created:</strong> 16 July,
+                      2023
+                    </li>
+                    <li><strong>Update:</strong> 20 May, 2023</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="alert alert-info">
+                If you have any questions or sugesstions to make this batter, or
+                if you want to ask new feature, Feel free to contact
+                <a target="_blank" href="https://jahidh.com/contact"
+                  >Contact Form</a
+                >.
+              </p>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_installation">
+              <h2>Installation</h2>
+              <p>
+                Looking to quickly add DataTable to your project? Use jsDelivr,
+                a free open source CDN. need to download the source files? Head
+                to the downloads page.
+                <a href="https://github.com/jahiidh/datatable">Download here</a>
+              </p>
+              <br />
+              <h4>CSS</h4>
+              <pre>
+                <code type="text" class="language-html">
+                  &lt;link href="https://cdn.jsdelivr.net/gh/jahiidh/datatable/dist/datatable.min.css" rel="stylesheet"/>
+                </code>
+              </pre>
+              <br />
+              <h4>JS</h4>
+              <pre>
+                <code type="text" class="language-html">
+                  &lt;script src="https://cdn.jsdelivr.net/gh/jahiidh/datatable/dist/datatable.min.js">&lt;/script>
+                </code>
+              </pre>
+              <br />
+              <p>
+                Use CSS whereever you want, but recomendation is use it inside
+                header. and use JavaScript code below the table you want to
+                convert on DataTable. But if you use it just top of the body end
+                tag, then you wouldn't need to worry about it.
+              </p>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_basic_usage">
+              <h2>Basic Usages</h2>
+              <br />
+              <h4>Structure</h4>
+              <div>
+                <table id="example" style="display: none">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>25</td>
+                      <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Jane Smith</td>
+                      <td>30</td>
+                      <td>jane@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Bob Johnson</td>
+                      <td>35</td>
+                      <td>bob@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Alice Williams</td>
+                      <td>28</td>
+                      <td>alice@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Brown</td>
+                      <td>32</td>
+                      <td>michael@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Sarah Davis</td>
+                      <td>29</td>
+                      <td>sarah@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Robert Taylor</td>
+                      <td>37</td>
+                      <td>robert@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Olivia Martinez</td>
+                      <td>31</td>
+                      <td>olivia@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>William Anderson</td>
+                      <td>26</td>
+                      <td>william@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Sophia Wilson</td>
+                      <td>33</td>
+                      <td>sophia@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>James Garcia</td>
+                      <td>27</td>
+                      <td>james@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Emma Thomas</td>
+                      <td>34</td>
+                      <td>emma@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>David Rodriguez</td>
+                      <td>30</td>
+                      <td>david@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Isabella Clark</td>
+                      <td>25</td>
+                      <td>isabella@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Joseph Young</td>
+                      <td>32</td>
+                      <td>joseph@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Charlotte Lewis</td>
+                      <td>29</td>
+                      <td>charlotte@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Daniel Lee</td>
+                      <td>36</td>
+                      <td>daniel@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Mia Martinez</td>
+                      <td>31</td>
+                      <td>mia@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Andrew Scott</td>
+                      <td>26</td>
+                      <td>andrew@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Emily Hernandez</td>
+                      <td>33</td>
+                      <td>emily@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Joshua Walker</td>
+                      <td>28</td>
+                      <td>joshua@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Abigail Moore</td>
+                      <td>35</td>
+                      <td>abigail@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Christopher Hall</td>
+                      <td>30</td>
+                      <td>christopher@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Sophia Rogers</td>
+                      <td>27</td>
+                      <td>sophia@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Samuel Young</td>
+                      <td>34</td>
+                      <td>samuel@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Elizabeth White</td>
+                      <td>29</td>
+                      <td>elizabeth@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Elijah Rodriguez</td>
+                      <td>36</td>
+                      <td>elijah@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Grace Walker</td>
+                      <td>31</td>
+                      <td>grace@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Dylan Allen</td>
+                      <td>26</td>
+                      <td>dylan@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Chloe Turner</td>
+                      <td>33</td>
+                      <td>chloe@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Carter Hill</td>
+                      <td>28</td>
+                      <td>carter@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Victoria Scott</td>
+                      <td>35</td>
+                      <td>victoria@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Henry Lewis</td>
+                      <td>30</td>
+                      <td>henry@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Madison Diaz</td>
+                      <td>27</td>
+                      <td>madison@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Alexander Garcia</td>
+                      <td>34</td>
+                      <td>alexander@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Lily Jenkins</td>
+                      <td>29</td>
+                      <td>lily@example.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br />
+              <h4 class="mb-1">HTML code</h4>
+              <div>
+                <pre>
+                  <code type="text">
+&lt;table id="example" style="display: none">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>Name&lt;/th>
+      &lt;th>Age&lt;/th>
+      &lt;th>Email&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>John Doe&lt;/td>
+      &lt;td>25&lt;/td>
+      &lt;td>john@example.com&lt;/td>
+    &lt;/tr>
+    ....
+  &lt;/tbody>
+&lt;/table>
+                  </code>
+                </pre>
+              </div>
+              <p>
+                Here `style="display: none;"` used for clean rendering. If you
+                don't want to use you could. But for low-end machines it will
+                help them to a smoth rendering datatable.
+              </p>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  themeClass: "default",
+  limit: [10, 20, 50, 100],
+  current_limit: 10,
+  pagination: true,
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_examples">
+              <h2>Here are some examples how you could use it.</h2>
+              <p>
+                You can use it with multiple way. It's an advanced library, so
+                it doesn't matter how you implement this. It will try check with
+                every possible way and run your code. It has less errors, and
+                advanced error handling script.
+              </p>
+              <h4>Some examples how you could use it.</h4>
+              <ul>
+                <li>HTML table and it will run your default table design</li>
+                <li>Use with Array Data</li>
+                <li>DataTable theme</li>
+                <li>Use HTML in cell</li>
+                <li>Define column names</li>
+                <li>Search & You can define where you want to search.</li>
+                <li>Highlight Search</li>
+                <li>Dropdowm limit</li>
+                <li>Generate Categories with dropdown and button design</li>
+                <li>Pagination</li>
+                <li>Sticky header</li>
+                <li>Sort table & define which column do you want to sort</li>
+                <li>
+                  If you're using with data, you can hide extra columns or not
+                  to print in table
+                </li>
+                <li>
+                  And, If your selector is `table` and also you added data then
+                  you can define which one you want to print.
+                </li>
+              </ul>
+            </section>
+
+            <hr class="divider" />
+            <section id="datatable_table">
+              <h2>Table Data</h2>
+              <p>
+                You can use Table data as your source input data for rendering
+                DataTable.
+              </p>
+              <br />
+              <h4>Structure</h4>
+              <div>
+                <table id="table_data" style="display: none">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>John Doe</td>
+                      <td>25</td>
+                      <td>john@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Jane Smith</td>
+                      <td>30</td>
+                      <td>jane@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Bob Johnson</td>
+                      <td>35</td>
+                      <td>bob@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Alice Williams</td>
+                      <td>28</td>
+                      <td>alice@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Brown</td>
+                      <td>32</td>
+                      <td>michael@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Sarah Davis</td>
+                      <td>29</td>
+                      <td>sarah@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Robert Taylor</td>
+                      <td>37</td>
+                      <td>robert@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Olivia Martinez</td>
+                      <td>31</td>
+                      <td>olivia@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>William Anderson</td>
+                      <td>26</td>
+                      <td>william@example.com</td>
+                    </tr>
+                    <tr>
+                      <td>Sophia Wilson</td>
+                      <td>33</td>
+                      <td>sophia@example.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <br />
+              <h4 class="mb-1">HTML code</h4>
+              <div>
+                <pre>
+                  <code type="text">
+&lt;table id="example" style="display: none">
+  &lt;thead>
+    &lt;tr>
+      &lt;th>Name&lt;/th>
+      &lt;th>Age&lt;/th>
+      &lt;th>Email&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>John Doe&lt;/td>
+      &lt;td>25&lt;/td>
+      &lt;td>john@example.com&lt;/td>
+    &lt;/tr>
+    ....
+  &lt;/tbody>
+&lt;/table>
+                  </code>
+                </pre>
+              </div>
+              <p>
+                Here `style="display: none;"` used for clean rendering. If you
+                don't want to use you could. But for low-end machines it will
+                help them to a smoth rendering datatable.
+              </p>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#table_data", {
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_array">
+              <h2>Array Data</h2>
+              <p>
+                You can use Table data as your source input data for rendering
+                DataTable.
+              </p>
+              <br />
+              <h4>Structure</h4>
+              <div>
+                <div id="array_data"></div>
+              </div>
+              <br />
+              <h4 class="mb-1">HTML code</h4>
+              <div>
+                <pre>
+                  <code type="text">
+&lt;div id="array_data">&lt;/div>
+                  </code>
+                </pre>
+              </div>
+              <p>
+                Here `style="display: none;"` used for clean rendering. If you
+                don't want to use you could. But for low-end machines it will
+                help them to a smoth rendering datatable.
+              </p>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example_data", {
+  columns: ['Name', 'Age', 'Email'],
+  data: [
+    ["John Doe", 25, "john@example.com"],
+    ["Jane Smith", 30, "jane@example.com"],
+    ["Bob Johnson", 35, "bob@example.com"],
+    ["Alice Williams", 28, "alice@example.com"],
+    ["Michael Brown", 32, "michael@example.com"],
+    ["Sarah Davis", 29, "sarah@example.com"],
+    ["Robert Taylor", 37, "robert@example.com"],
+    ["Olivia Martinez", 31, "olivia@example.com"],
+    ["William Anderson", 26, "william@example.com"],
+    ["Sophia Wilson", 33, "sophia@example.com"],
+  ],
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+              <p>
+                If you don't use `columns` then, it will take the first data row
+                for heading.
+              </p>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_column">
+              <h2>Columns</h2>
+              <p>
+                You can use columns whatever you want. If you use plain array
+                then it will count every value as column name. If you use
+                object, then your object key will be counted as column index.
+                and if you can you use multidimensional array / object to define
+                more precisely.
+              </p>
+              <p>Here're some examples</p>
+              <br />
+              <h4>As array.</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  columns: ['Name', 'Age', 'Email'],
+  data: [],
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+              <h4>As Object</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  columns: {1: 'Age', 2: 'Email', 0: 'Name'},
+  data: [],
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+              <h4>Define more precisely.</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  columns: [
+    {
+      title: 'Name'
+    },
+    {
+      title: 'Age'
+    },
+    {
+      title: 'Email'
+    },
+  ],
+  data: [],
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_cellhtml">
+              <h2>HTML inside cell</h2>
+              <p>
+                Actually you could use HTML inside any cell. You can define the
+                cell.
+              </p>
+              <p>Here is an examples</p>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  columns: [
+    {
+      title: 'Name',
+      html: '<a href="#">{data.value}</a>'
+    },
+    {
+      title: 'Age',
+      html: '<a href="#">{data.value}</a>'
+    },
+    {
+      title: 'Email',
+    },
+  ],
+  data: [],
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+              <p>
+                Here <code>{data.val}</code> is used for define the current cell
+                value.
+              </p>
+              <hr />
+              <p>
+                But, If you want to use another data value then just use it.
+                also If you want, you could use value from data inside an
+                attribute.
+              </p>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  columns: [
+    {
+      title: 'Age',
+      html: '<a href="#">{data[1].value}</a>'
+    },
+    {
+      title: 'Name',
+      html: '{data[0].value}'
+    },
+    {
+      title: 'Email',
+      html: '<a href="mailto:{data[2].value}">{data[2].value}</a>'
+    },
+  ],
+  data: [],
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+              <p>Just use the column / data index inside square bracket.</p>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_search">
+              <h2>Add Search option</h2>
+              <p>
+                Search has lots of option. Not only you can add search, also you
+                can customize it and where do you want to serach. You can define
+                specific column, specific attribute or you can use selector.
+              </p>
+              <h4>Basic search</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  search: true
+});
+                  </code>
+                </pre>
+              </div>
+              <h4>Specified search</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  search: true,
+  search_on: {
+    0: "column",
+    1: ["column", "data-value"],
+  },
+});
+                  </code>
+                </pre>
+              </div>
+              <p>
+                * Note: If there are more columns then also it would search on
+                column main text. If you want to strict it and only serach on
+                selected column then use strict method.
+              </p>
+              <h4>Specified search on strict mode</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  search: true,
+  search_on: {
+    "*": "strict",
+    0: "column",
+    1: ["column", "data-value"],
+  },
+});
+                  </code>
+                </pre>
+              </div>
+              <h4>Specified search on all columns</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  search: true,
+  search_on: {
+    "*": ["strict", "data-value"],
+    0: "column",
+    1: ["column", "data-value"],
+  },
+});
+                  </code>
+                </pre>
+              </div>
+              <p>
+                Here * will work for all columns. If you set strict and you
+                don't mention column separately, then it will not check to the
+                column.
+              </p>
+              <small
+                >* You can use object as well as. Actually you could use any
+                type data. There have a advanced strict to detect everything and
+                work as you expect.</small
+              >
+            </section>
+            <hr class="divider" />
+            <section id="datatable_search_highlight">
+              <h2>Search highlight feature</h2>
+              <p>
+                If you want to hightlight the found cell then you could use it.
+                it will not highlight the entire row, instead of it will
+                highlight the matched cell.
+              </p>
+              <h4>Code</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  search: true,
+  search_on: {
+    0: "column",
+    1: ["column", "data-value"],
+  },
+  search_heighlight: true,
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_limit">
+              <h2>Limit per page</h2>
+              <p>
+                Yes, there have some basic features. You can set limit and a
+                dropdown.
+              </p>
+              <h4>Code</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  limit: [10, 20, 50, 100],
+  current_limit: 10,
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_pagination">
+              <h2>Pagination</h2>
+              <p>
+                It's a powerful feature and have some advanced functionalities.
+                It will show prev, next, start, end and regular pages, depend on
+                which page is active.
+              </p>
+              <h4>Code</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  pagination: true,
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_sticky">
+              <h2>Sticky header</h2>
+              <p>
+                It's supports sticky header. If you limit the height then it's
+                an important feature. Its work with basic way, when you will
+                scroll the header will stick to the top until the table is
+                completely scrolled.
+              </p>
+              <h4>Code</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  sticky: true,
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_hideextra">
+              <h2>Hide or don't render extra columns</h2>
+              <p>
+                It's not so important feature untill it's needed. Actually it's
+                a little complicated thing. If you use data from Array then
+                items will render based on your columns. So If there has extra
+                items left then you could render them, but it will be hidden.
+                and it will work when you will search and don't use strick mode.
+              </p>
+              <p>
+                The main use is, If you need to render all the cell and don't
+                want to show those cells then it will do that for you. by
+                default it's false and it will not render. If you want ro render
+                then you would need to use it this code.
+              </p>
+              <h4>Code</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  hideExtra: true,
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_sort">
+              <h2>Sort columns</h2>
+              <p>
+                You can use sort method to sort your table. also you could
+                choose the columns that you want to sort. It will work according
+                to your column text.
+              </p>
+              <h4>Sort all columns</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  sort: true,
+});
+                  </code>
+                </pre>
+              </div>
+              <h4>Sort Specified columns</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">
+new DataTable("#example", {
+  sort: true,
+  sort_columns: [0, 2],
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_category">
+              <h2>Categories</h2>
+              <p>
+                It's an advanced feature. You can use categories from your given
+                data. You just need to tell the item index. you can use multiple
+                categories and with different style. If you want, you can use
+                button style and dropdown style.
+              </p>
+              <h4>Structure</h4>
+              <div>
+                <div id="example_category"></div>
+              </div>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">                    
+new DataTable("#example_category", {
+  categories: [
+    {
+      placeholder: "Email",
+      data: "{data[2].value}",
+      column: "{column[2] attr['data-value']}",
+      type: "select",
+    },
+    {
+      placeholder: "Name",
+      data: "{data[0].value}",
+      column: "{column[0] span attr['data-category']}",
+      type: "button",
+    },
+  ],
+  columns: [
+    {
+      title: "Name",
+      html: "<span data-category='{data[0].value}'>{data.value}</span>",
+    },
+    {
+      title: "Age",
+    },
+    {
+      title: "Email",
+      html: "<span data-value='{data[2].value}'>{data.value}</span>",
+    },
+  ],
+  data: [
+    ["John Doe", 25, "john@example.com"],
+    ["Jane Smith", 30, "jane@example.com"],
+    ["Bob Johnson", 35, "bob@example.com"],
+    ["Alice Williams", 28, "alice@example.com"],
+    ["Michael Brown", 32, "michael@example.com"],
+    ["Sarah Davis", 29, "sarah@example.com"],
+    ["Robert Taylor", 37, "robert@example.com"],
+    ["Olivia Martinez", 31, "olivia@example.com"],
+    ["William Anderson", 26, "william@example.com"],
+    ["Sophia Wilson", 33, "sophia@example.com"],
+  ],
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+            <hr class="divider" />
+            <section id="datatable_all">
+              <h2>Everything in one place</h2>
+              <p>
+                It has some more features. Use it with your own and explore. and
+                be remember, it could handle 80% of error itself.
+              </p>
+              <h4>Structure</h4>
+              <div>
+                <div id="example_full"></div>
+              </div>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">                    
+new DataTable("#example_full", {
+  categories: [
+    {
+      placeholder: "Email",
+      data: "{data[2].value}",
+      column: "{column[2] attr['data-value']}",
+      type: "select",
+    },
+    {
+      placeholder: "Name",
+      data: "{data[0].value}",
+      column: "{column[0] span attr['data-category']}",
+      type: "button",
+    },
+  ],
+  columns: [
+    {
+      title: "Name",
+      html: "<span data-category='{data[0].value}'>{data.value}</span>",
+    },
+    {
+      title: "Age",
+    },
+    {
+      title: "Email",
+      html: "<span data-value='{data[2].value}'>{data.value}</span>",
+    },
+  ],
+  data: [
+    ["John Doe", 25, "john@example.com"],
+    ["Jane Smith", 30, "jane@example.com"],
+    ["Bob Johnson", 35, "bob@example.com"],
+    ["Alice Williams", 28, "alice@example.com"],
+    ["Michael Brown", 32, "michael@example.com"],
+    ["Sarah Davis", 29, "sarah@example.com"],
+    ["Robert Taylor", 37, "robert@example.com"],
+    ["Olivia Martinez", 31, "olivia@example.com"],
+    ["William Anderson", 26, "william@example.com"],
+    ["Sophia Wilson", 33, "sophia@example.com"],
+  ],
+  content: "data",
+  search: true,
+  search_on: {},
+  search_heighlight: false,
+  sort: true,
+  sort_columns: [1, 2],
+  pagination: true,
+  limit: [5, 20, 50, 100],
+  current_limit: 5,
+  sticky: false,
+  hideExtra: true,
+  themeClass: "default",
+});
+                  </code>
+                </pre>
+              </div>
+            </section>
+
+            <section id="datatable_changelog">
+              <h2>Changelog</h2>
+              <p class="text-4">
+                See what's new added, changed, fixed, improved or updated in the
+                latest versions.
+              </p>
+
+              <h3 id="v1-0-3">
+                Version 1.0.3 <small class="text-muted">(20 July, 2023)</small>
+              </h3>
+              <p>Optimized rendering speed and Fixed some errors.</p>
+
+              <hr class="divider" />
+
+              <h3 id="v1-0">
+                Version 1.0 <small class="text-muted">(16 July, 2023)</small>
+              </h3>
+              <p>Initial Release</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <footer id="footer" class="section bg-dark footer-text-light">
+        <div class="container">
+          <ul
+            class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3 text-light"
+          >
+            <li>
+              <a
+                data-toggle="tooltip"
+                href="http://www.github.com/jahiidh/"
+                target="_blank"
+                title=""
+                data-original-title="Github"
+              >
+                <span
+                  ><svg
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    class="github-altsd"
+                    fill="#dedede"
+                  >
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    ></path></svg></span
+              ></a>
+            </li>
+            <li>
+              <a
+                data-toggle="tooltip"
+                href="https://www.linkedin.com/in/jahiidh/"
+                target="_blank"
+                title=""
+                data-original-title="Linkedin"
+                ><span
+                  ><svg
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    class="linkedin-altsd"
+                    fill="#dedede"
+                  >
+                    <title>LinkedIn</title>
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    ></path></svg></span
+              ></a>
+            </li>
+          </ul>
+          <p class="text-center">
+            &copy; 2023. This project is licensed under the MIT License.
+          </p>
+          <p class="text-2 text-center mb-0">
+            Design &amp; Develop by
+            <a class="btn-link" target="_blank" href="https://jahidh.com"
+              >Jahid H.</a
+            >.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <a
+      id="back-to-top"
+      data-toggle="tooltip"
+      title="Back to Top"
+      href="javascript:void(0)"
+      ><i class="fa fa-chevron-up"></i
+    ></a>
+
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/prism/prism.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="assets/datatable/datatable.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script>
+      let svgs = {
+        copy: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="clipboard" viewBox="0 0 16 16"> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path> </svg>`,
+        copied: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="clipboard-check" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"></path> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"></path> </svg>`,
+      };
+
+      document.querySelectorAll("code").forEach((code) => {
+        let highlighted,
+          text,
+          prism_language = "language-html";
+        if (code.classList.contains("language-javascript")) {
+          prism_language = code.getAttribute("class");
+        } else if (
+          code.hasAttribute("type") &&
+          code.getAttribute("type") == "text"
+        ) {
+          text = code.innerText;
+        }
+        if (!text) {
+          text = code.innerHTML;
+        }
+
+        highlighted = Prism.highlight(
+          text.trim(),
+          Prism.languages.html,
+          "html"
+        );
+
+        var div = document.createElement("div");
+        div.classList.add("code-snippet");
+        div.innerHTML = `
+          <div class="code-clipboard">
+            <span class="svg-parent">${svgs.copy}</span>
+          </div>
+          <pre><code class="${prism_language}">${highlighted.trim()}</code></pre>
+        `;
+        if (code.closest("pre")) {
+          code.closest("pre").outerHTML = div.outerHTML;
+        } else {
+          code.outerHTML = div.outerHTML;
+        }
+      });
+      window.addEventListener("click", (e) => {
+        document.querySelectorAll(".code-clipboard").forEach((n, z) => {
+          if (e.target == n || n.contains(e.target)) {
+            let code = n.closest(".code-snippet").querySelector("code");
+            copy(code.innerText);
+            n.querySelector("svg").outerHTML = svgs.copied;
+            var span = document.createElement("span");
+            span.classList.add("popup-title");
+            span.innerText = "Copied!";
+            n.querySelector(".svg-parent").append(span);
+            setTimeout(() => {
+              n.querySelector(".popup-title").remove();
+              n.querySelector("svg").outerHTML = svgs.copy;
+            }, 2000);
+          }
+        });
+      });
+      function copy(text) {
+        navigator.clipboard
+          .writeText(text)
+          .then(function () {
+            return 200;
+          })
+          .catch(function (err) {
+            return "Failed to copy text: " + err;
+          });
+      }
+    </script>
+    <script>
+      new DataTable("#example", {
+        themeClass: "default",
+        limit: [10, 20, 50, 100],
+        current_limit: 10,
+        pagination: true,
+      });
+      new DataTable("#table_data", {
+        themeClass: "default",
+      });
+      new DataTable("#array_data", {
+        columns: ["Name", "Age", "Email"],
+        data: [
+          ["John Doe", 25, "john@example.com"],
+          ["Jane Smith", 30, "jane@example.com"],
+          ["Bob Johnson", 35, "bob@example.com"],
+          ["Alice Williams", 28, "alice@example.com"],
+          ["Michael Brown", 32, "michael@example.com"],
+          ["Sarah Davis", 29, "sarah@example.com"],
+          ["Robert Taylor", 37, "robert@example.com"],
+          ["Olivia Martinez", 31, "olivia@example.com"],
+          ["William Anderson", 26, "william@example.com"],
+          ["Sophia Wilson", 33, "sophia@example.com"],
+        ],
+        themeClass: "default",
+      });
+
+      new DataTable("#example_category", {
+        categories: [
+          {
+            placeholder: "Email",
+            data: "{data[2].value}",
+            column: "{column[2] attr['data-value']}",
+            type: "select",
+          },
+          {
+            placeholder: "Name",
+            data: "{data[0].value}",
+            column: "{column[0] span attr['data-category']}",
+            type: "button",
+          },
+        ],
+        columns: [
+          {
+            title: "Name",
+            html: "<span data-category='{data[0].value}'>{data.value}</span>",
+          },
+          {
+            title: "Age",
+          },
+          {
+            title: "Email",
+            html: "<span data-value='{data[2].value}'>{data.value}</span>",
+          },
+        ],
+        data: [
+          ["John Doe", 25, "john@example.com"],
+          ["Jane Smith", 30, "jane@example.com"],
+          ["Bob Johnson", 35, "bob@example.com"],
+          ["Alice Williams", 28, "alice@example.com"],
+          ["Michael Brown", 32, "michael@example.com"],
+          ["Sarah Davis", 29, "sarah@example.com"],
+          ["Robert Taylor", 37, "robert@example.com"],
+          ["Olivia Martinez", 31, "olivia@example.com"],
+          ["William Anderson", 26, "william@example.com"],
+          ["Sophia Wilson", 33, "sophia@example.com"],
+        ],
+        themeClass: "default",
+      });
+      new DataTable("#example_full", {
+        categories: [
+          {
+            placeholder: "Email",
+            data: "{data[2].value}",
+            column: "{column[2] attr['data-value']}",
+            type: "select",
+          },
+          {
+            placeholder: "Name",
+            data: "{data[0].value}",
+            column: "{column[0] span attr['data-category']}",
+            type: "button",
+          },
+        ],
+        columns: [
+          {
+            title: "Name",
+            html: "<span data-category='{data[0].value}'>{data.value}</span>",
+          },
+          {
+            title: "Age",
+          },
+          {
+            title: "Email",
+            html: "<span data-value='{data[2].value}'>{data.value}</span>",
+          },
+        ],
+        data: [
+          ["John Doe", 25, "john@example.com"],
+          ["Jane Smith", 30, "jane@example.com"],
+          ["Bob Johnson", 35, "bob@example.com"],
+          ["Alice Williams", 28, "alice@example.com"],
+          ["Michael Brown", 32, "michael@example.com"],
+          ["Sarah Davis", 29, "sarah@example.com"],
+          ["Robert Taylor", 37, "robert@example.com"],
+          ["Olivia Martinez", 31, "olivia@example.com"],
+          ["William Anderson", 26, "william@example.com"],
+          ["Sophia Wilson", 33, "sophia@example.com"],
+        ],
+        content: "data",
+        search: true,
+        search_on: {},
+        search_heighlight: false,
+        sort: true,
+        sort_columns: [1, 2],
+        pagination: true,
+        limit: [5, 20, 50, 100],
+        current_limit: 5,
+        sticky: false,
+        hideExtra: true,
+        themeClass: "default",
+      });
+    </script>
+  </body>
+</html>

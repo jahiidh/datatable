@@ -24,6 +24,7 @@ class DataTable {
         _.tc = p.themeClass ?? "initial";
         _.so = p.search_on ?? false;
         _.sh = p.search_heighlight ?? false;
+        _.rsp = p.responsive ?? true;
         _.th = {};
         _.h();
     }
@@ -553,7 +554,12 @@ class DataTable {
             },
             n
         );
-        n.classList.add("dt-table", _.tc);
+
+        let tcs = _.tc.split(' ');
+        tcs.forEach((v) => {
+            n.classList.add("dt-table", v);
+        });
+
         if (_.stk) {
             n.classList.add("dt-sticky");
         }
@@ -633,8 +639,6 @@ class DataTable {
         }
         dti += `${d.length}</span> entries</div>`;
 
-        let eld = "";
-
         var div = $.createElement("div");
         if ((_.d && _.c && _.c == "data") || (_.d && _.c === false)) {
             for (const attr of $.querySelectorAll(s)[ni].attributes) {
@@ -643,6 +647,22 @@ class DataTable {
         }
 
         div.classList.add("dt-body");
+
+        if (_.n.classList.contains('dt-ultra-responsive')) {
+            let thsv = [];
+            _.qa('thead th', (thv) => {
+                thsv.push(thv.innerText);
+            }, _.n);
+
+            _.qa('tbody tr', (trn) => {
+                _.qa('td', (tdn, z) => {
+                    if (thsv[z]) {
+                        tdn.setAttribute('data-th', thsv[z]);
+                    }
+                }, trn);
+            }, _.n);
+        }
+
 
         div.innerHTML = `
         <div class="dt-header">
@@ -653,7 +673,9 @@ class DataTable {
             ${sc}
           </div>
         </div>
-        ${_.n.outerHTML}
+        <div class="dt-table-parent ${(_.rsp !== false) ? 'dt-responsive' : ''}">
+            ${_.n.outerHTML}
+        </div>
         <div class="dt-footer">
           <div class="d-flex">
             ${dti}

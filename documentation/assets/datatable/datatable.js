@@ -1,3 +1,8 @@
+/*!
+  * DataTable v1.0.3 (https://getbootstrap.com/)
+  * Copyright 2023, Author (https://github.com/jahiidh)
+  * Licensed under MIT (https://github.com/jahiidh/datatable/LICENSE)
+  */
 class DataTable {
   constructor(s, p = {}) {
     let _ = this;
@@ -19,6 +24,7 @@ class DataTable {
     _.tc = p.themeClass ?? "initial";
     _.so = p.search_on ?? false;
     _.sh = p.search_heighlight ?? false;
+    _.rsp = p.responsive ?? true;
     _.th = {};
     _.h();
   }
@@ -223,8 +229,8 @@ class DataTable {
       ci = (parseInt(m[1]) + 1);
       if (m[2] !== '' && m[2].match(/ attr\[(.*)\]/)) {
         let m2 = m[2].match(/ attr\[(.*)\]/);
-        cl = m[2].replace(m2[0], '');
-        a = m2[1].replace(/^['"]|['"]$/g, '');
+        cl = m[2].replaceAll(m2[0], '');
+        a = m2[1].replaceAll(/^['"]|['"]$/g, '');
       } else {
         cl = m[2];
       }
@@ -362,7 +368,7 @@ class DataTable {
       }
       tb.appendChild(cn);
     }, n);
-    if ((x === 1 && tb.querySelectorAll('.dt-norow').length !== 0) || x === 0) {
+    if ((tb.querySelectorAll('.dt-norow').length !== 0) || x === 0) {
       if (tb.querySelectorAll('.dt-norow').length == 0) {
         let et = document.createElement('tr');
         et.innerHTML = '<td colspan="100">No Result found.</td>';
@@ -535,10 +541,10 @@ class DataTable {
           (td, tdi) => {
             let gh = _.th[tdi];
             if (gh !== "" && gh !== undefined) {
-              gh = gh.replace("{data.value}", td.innerHTML);
+              gh = gh.replaceAll("{data.value}", td.innerHTML);
               const m = [...gh.matchAll(/{data\[(\d+)\]\.value}/g)];
               m.forEach((mr) => {
-                gh = gh.replace(mr[0], d[ci][mr[1]]);
+                gh = gh.replaceAll(mr[0], d[ci][mr[1]]);
               });
               td.innerHTML = gh;
             }
@@ -548,7 +554,12 @@ class DataTable {
       },
       n
     );
-    n.classList.add("dt-table", _.tc);
+
+    let tcs = _.tc.split(' ');
+    tcs.forEach((v) => {
+      n.classList.add("dt-table", v);
+    });
+
     if (_.stk) {
       n.classList.add("dt-sticky");
     }
@@ -628,8 +639,6 @@ class DataTable {
     }
     dti += `${d.length}</span> entries</div>`;
 
-    let eld = "";
-
     var div = $.createElement("div");
     if ((_.d && _.c && _.c == "data") || (_.d && _.c === false)) {
       for (const attr of $.querySelectorAll(s)[ni].attributes) {
@@ -639,23 +648,41 @@ class DataTable {
 
     div.classList.add("dt-body");
 
+    if (_.n.classList.contains('dt-ultra-responsive')) {
+      let thsv = [];
+      _.qa('thead th', (thv) => {
+        thsv.push(thv.innerText);
+      }, _.n);
+
+      _.qa('tbody tr', (trn) => {
+        _.qa('td', (tdn, z) => {
+          if (thsv[z]) {
+            tdn.setAttribute('data-th', thsv[z]);
+          }
+        }, trn);
+      }, _.n);
+    }
+
+
     div.innerHTML = `
-        <div class="dt-header">
-          <div class="d-flex">
-            <div class="dt-filter">
-              ${df}
-            </div>
-            ${sc}
+      <div class="dt-header">
+        <div class="d-flex">
+          <div class="dt-filter">
+            ${df}
           </div>
+          ${sc}
         </div>
-        ${_.n.outerHTML}
-        <div class="dt-footer">
-          <div class="d-flex">
-            ${dti}
-            ${ph}
-          </div>
+      </div>
+      <div class="dt-table-parent ${(_.rsp !== false) ? 'dt-responsive' : ''}">
+          ${_.n.outerHTML}
+      </div>
+      <div class="dt-footer">
+        <div class="d-flex">
+          ${dti}
+          ${ph}
         </div>
-    `;
+      </div>
+  `;
 
     $.querySelectorAll(s)[ni].replaceWith(div);
   }
@@ -853,7 +880,5 @@ class DataTable {
       n.style.display = null;
     });
     this.fev();
-    // let elm = this.clck(".dt-sortable");
-    // console.log(elm);
   };
 }

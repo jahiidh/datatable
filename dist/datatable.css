@@ -124,7 +124,7 @@ table.dt-table.default a {
   border-radius: 50px;
   border: unset;
   background-color: rgba(0, 0, 0, 0.1);
-  padding: 5px;
+  padding: 0px 10px;
   margin: 5px 5px 0 0;
   cursor: pointer;
 }
@@ -136,4 +136,56 @@ table.dt-table.default a {
 }
 .dt-body .dt-search-highlight {
   background-color: rgba(255, 255, 0, 0.3);
+}
+
+@media (max-width: 667px) {
+  .dt-body .d-flex {
+    flex-direction: column !important;
+    gap: 10px;
+    text-align: center;
+  }
+  .dt-table-parent.dt-responsive {
+    overflow-x: auto;
+  }
+  .dt-table.dt-ultra-responsive {
+    border: 0;
+  }
+
+  .dt-table.dt-ultra-responsive caption {
+    font-size: 1.3em;
+  }
+
+  .dt-table.dt-ultra-responsive thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .dt-table.dt-ultra-responsive tr {
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 0.625em;
+  }
+
+  .dt-table.dt-ultra-responsive td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .dt-table.dt-ultra-responsive td::before {
+    content: attr(data-th);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .dt-table.dt-ultra-responsive td:last-child {
+    border-bottom: 0;
+  }
 }

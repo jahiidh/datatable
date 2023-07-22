@@ -1,3 +1,4 @@
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/_handler.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,12 +10,13 @@
     />
     <link href="assets/images/favicon.png" rel="icon" />
     <title>
-      Vanilla JS DataTable Documentation | Easy and Powerful Data Tables
+      Vanilla JS DataTable Documentation | Easy and Powerful DataTable library |
+      Jahid H.
     </title>
 
     <meta
       name="description"
-      content="Explore the powerful and easy-to-use Vanilla JS DataTable library. Effortlessly create, customize, and manage data tables on your front-end web projects. Get started with our comprehensive documentation and examples."
+      content="Effortlessly manage data tables with our powerful Vanilla JS DataTable library. Customizable, lightweight, and easy-to-use. Get started now!"
     />
 
     <meta name="author" content="Jahid H." />
@@ -42,7 +44,7 @@
     />
     <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/color-brown.css" />
-    <link rel="stylesheet" href="assets/datatable/datatable.css" />
+    <link rel="stylesheet" href="assets/datatable/datatable.min.css" />
   </head>
 
   <body data-spy="scroll" data-target=".datatable-navigation" data-offset="125">
@@ -69,7 +71,7 @@
 
             <a
               class="logo ml-md-3 text-decoration-none"
-              href=""
+              href="https://tools.jahidh.com/datatable/"
               title="datatable Template"
             >
               <span class="h2"> DataTable </span>
@@ -239,6 +241,11 @@
                   <a class="nav-link" href="#datatable_category">Category</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="#datatable_responsive"
+                    >Responsive</a
+                  >
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="#datatable_all"
                     >Everything in one place</a
                   >
@@ -265,9 +272,10 @@
               <h1>Introduction</h1>
               <h2>Vanilla JavaScript DataTable</h2>
               <p class="lead">
-                Advanced and very lightweight DataTable for use with your
-                Vanilla JavaScript project. It's used vanilla JavaScript, so
-                that you could use it anywhere you want.
+                Explore the powerful, advanced, lightweight and easy-to-use
+                Vanilla JS DataTable library. Effortlessly create, customize,
+                and manage data tables on your front-end web projects. Get
+                started with our comprehensive documentation and examples.
               </p>
               <hr />
               <div class="row">
@@ -1175,6 +1183,40 @@ new DataTable("#example_category", {
               </div>
             </section>
             <hr class="divider" />
+            <section id="datatable_responsive">
+              <h2>Responsive</h2>
+              <p>
+                By default, datatable renders with responsive design. But if you
+                want to disable it then you can. also it has `ultra responsive`
+                mode.
+              </p>
+              <h4>Disable responsive</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">                    
+new DataTable("#example", {
+  responsive: false,
+});
+                  </code>
+                </pre>
+              </div>
+              <h4>Ultra responsive</h4>
+              <div class="line-numbers">
+                <pre class="">
+                  <code class="language-javascript">                    
+new DataTable("#example", {
+  themeClass: "default dt-ultra-responsive",
+});
+                  </code>
+                </pre>
+              </div>
+              <p>
+                *Note: If you use ultra responsive mode then, `responsive:
+                false` won't work. you would need to remove this
+                `dt-ultra-responsive` for disable ultra responsive mode.
+              </p>
+            </section>
+            <hr class="divider" />
             <section id="datatable_all">
               <h2>Everything in one place</h2>
               <p>
@@ -1347,7 +1389,7 @@ new DataTable("#example_full", {
     <script src="assets/vendor/prism/prism.js"></script>
     <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
     <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/datatable/datatable.js"></script>
+    <script src="assets/datatable/datatable.min.js"></script>
     <script src="assets/js/theme.js"></script>
     <script>
       let svgs = {

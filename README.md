@@ -22,7 +22,7 @@ To see DataTable in action, check out our [live demo](https://tools.jahidh.com/d
 
 ## Installation
 
-You can start use it with CDN
+You can start using it with CDN
 
 ```html
 <link href="https://cdn.jsdelivr.net/gh/jahiidh/datatable/datatable.min.css" rel="stylesheet"/>

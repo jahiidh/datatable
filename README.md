@@ -25,11 +25,11 @@ To see DataTable in action, check out our [live demo](https://tools.jahidh.com/d
 You can start using it with CDN
 
 ```html
-<link href="https://cdn.jsdelivr.net/gh/jahiidh/datatable/datatable.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/jahiidh/datatable/dist/datatable.min.css" rel="stylesheet"/>
 ```
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/jahiidh/datatable/datatable.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/jahiidh/datatable/dist/datatable.min.js"></script>
 ```
 
 ```html

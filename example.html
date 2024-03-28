@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./dist/datatable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <table id="example" style="display: none">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>25</td>
+          <td>john@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="./dist/datatable.js"></script>
+    <script>
+      new DataTable("#example", {
+        categories: [
+          {
+            placeholder: "Email",
+            data: "{data[2].value}",
+            column: "{column[2] attr['data-value']}",
+            type: "select",
+          },
+          {
+            placeholder: "Name",
+            data: "{data[0].value}",
+            column: "{column[0] span attr['data-category']}",
+            type: "button",
+          },
+        ],
+        columns: [
+          {
+            title: "Name",
+            html: '<span data-category="{data[0].value}">{data.value}</span>',
+          },
+          {
+            title: "Age",
+          },
+          {
+            title: "Email",
+            html: "<span data-value='{data[2].value}''>{data.value}</span>",
+          },
+        ],
+        data: [
+          ["John Doe", 25, "john@example.com"],
+          ["Jane Smith", 30, "jane@example.com"],
+          ["Bob Johnson", 35, "bob@example.com"],
+          ["Alice Williams", 28, "alice@example.com"],
+          ["Michael Brown", 32, "michael@example.com"],
+          ["Sarah Davis", 29, "sarah@example.com"],
+          ["Robert Taylor", 37, "robert@example.com"],
+          ["Olivia Martinez", 31, "olivia@example.com"],
+          ["William Anderson", 26, "william@example.com"],
+          ["Sophia Wilson", 33, "sophia@example.com"],
+        ],
+        content: "data",
+        search: true,
+        search_on: {},
+        search_heighlight: false,
+        sort: true,
+        sort_columns: [1, 2],
+        pagination: true,
+        limit: [5, 20, 50, 100],
+        current_limit: 5,
+        sticky: false,
+        hideExtra: true,
+        themeClass: "default",
+      });
+    </script>
+  </body>
+</html>
